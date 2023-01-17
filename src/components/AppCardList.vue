@@ -36,9 +36,6 @@ main {
     .card-cont {
         display: flex;
         flex-wrap: wrap;
-
-
-
     }
 }
 </style>
