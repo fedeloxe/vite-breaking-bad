@@ -2,7 +2,7 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import AppCard from './components/AppSingleCard.vue';
+import AppSingleCard from './components/AppSingleCard.vue';
 import { store } from './store.js';
 
 export default {
@@ -17,10 +17,13 @@ export default {
       store
     }
   },
+  created() {
+    this.getCards();
+  },
   methods: {
-    getCharacters() {
+    getCards() {
       axios.get(store.url).then((response) => {
-        store.charactersList = response.data.data
+        store.cards = response.data.data
         setTimeout(() => {
           store.loading = false
         }, 100)
