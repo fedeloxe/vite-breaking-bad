@@ -18,6 +18,8 @@ export default {
 <style lang="scss" scoped>
 header {
     display: flex;
+    padding: 20px;
+    align-items: center;
 }
 
 .logo img {
