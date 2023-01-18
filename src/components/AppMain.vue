@@ -1,21 +1,17 @@
 <script>
 import AppCardList from './AppCardList.vue';
+
 export default {
     components: {
-        AppCardList
+        AppCardList,
+
     }
 
 }
 </script>
 <template>
     <main>
-        <div class="select">
-            <select name="Alien" id="selettore">
-                <option value="1">Alien</option>
-                <option value="2">Alien</option>
-                <option value="3">Alien</option>
-            </select>
-        </div>
+
         <div class="container">
 
             <AppCardList />
@@ -27,7 +23,7 @@ export default {
 </template>
 
 
-<style lang="scss" >
+<style lang="scss" scoped >
 main {
     background-color: #d48f38;
     width: 100%;
@@ -40,7 +36,7 @@ main {
 
 
     .container {
-        padding-top: 30px;
+
         background-color: white;
 
 

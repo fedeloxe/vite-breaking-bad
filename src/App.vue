@@ -3,6 +3,7 @@ import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import Apploader from './components/AppLoader.vue';
+import AppSelect from './components/AppSelect.vue';
 
 import { store } from './store.js';
 
@@ -11,8 +12,7 @@ export default {
     AppHeader,
     AppMain,
     Apploader,
-
-
+    AppSelect
   },
   data() {
     return {
@@ -24,7 +24,9 @@ export default {
   },
   methods: {
     getCards() {
-      axios.get(store.url).then((response) => {
+      let myUrl = `${store.url}${store.selectedArc}`;
+
+      axios.get(myUrl).then((response) => {
         store.cards = response.data.data
 
         setTimeout(() => {
@@ -39,7 +41,8 @@ export default {
 
 <template lang="">
   <AppHeader />
-  <div v-if="store.loading">
+  <div v-if="store.loading" >
+    <AppSelect @change="getCards" />
     <AppMain />
   </div>
   <div v-else>
