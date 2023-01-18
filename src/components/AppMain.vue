@@ -1,9 +1,11 @@
 <script>
 import AppCardList from './AppCardList.vue';
+import AppResultsMessage from './AppResultsMessage.vue';
 
 export default {
     components: {
         AppCardList,
+        AppResultsMessage,
 
     }
 
@@ -13,7 +15,7 @@ export default {
     <main>
 
         <div class="container">
-
+            <AppResultsMessage />
             <AppCardList />
 
         </div>

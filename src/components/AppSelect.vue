@@ -25,8 +25,7 @@ export default {
 <template lang="">
     <div class="bg-orange">
         <div class="select-container">
-            <select v-model="store.selectedArc" @change="$emit('select')"> 
-                
+            <select v-model="store.selectedArc" @change="$emit('select')" name="arc" id="arc"> 
                 <option v-for="(item, index) in archetypes" :key="item" :value="item">{{ item }}</option>
             </select>
         </div>
